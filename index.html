@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Awesome Books</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ***********************  PAGE OVERALL CONTENT WRAPPER *********************** -->
+  <div class="container">
+
+    <!-- ***********************  PAGE HEADER *********************** -->
+    <header class="header">
+			<div class="header__wrapper">
+				<span class="header__logo">Awesome Books</span>
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item active">List</li>
+						<li class="header__nav-item" data-nav="add">Add new</li>
+						<li class="header__nav-item" data-nav="contact">Contact</li>
+					</ul>
+				</nav>
+			</div>
+			<span class="header__date"></span>
+		</header>
+
+    <!-- ***********************  PAGE MAIN *********************** -->
+    <main class="main">
+		<div class="books">
+			
+			<!--Book collection body-->
+			<section class="books__collection">
+
+				<!--Books collection title-->
+				<h1 class="books__collection-title">All awesome books</h1>
+			
+				<!--Books list section-->
+				<div class="books__list"></div>
+			
+			</section>
+		</div>
+    </main>
+
+    <!-- ***********************  PAGE FOOTER *********************** -->
+    <footer class="footer">
+			<p class="footer__note">Copyright</p>
+		</footer>
+
+  </div>
+
+  <!-- ***********************  PAGE SCRIPTS *********************** -->
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
