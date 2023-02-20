@@ -1,4 +1,4 @@
-import Books from './modules/Books.js';
+import Books from './modules/books.js';
 
 // Get DOM elements
 const dateDisplay = document.querySelector('.header__date');
