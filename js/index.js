@@ -1,63 +1,25 @@
 import Books from './modules/books.js';
-
+import { CurrentDateTime } from './modules/datetime.js';
 // Get DOM elements
-const dateDisplay = document.querySelector('.header__date');
-
-// create a date-time function
-const CurrentDateTime = () => {
-	const dateObject = new Date();
-	const yearNow = dateObject.getFullYear();
-	const monthNow = dateObject.toLocaleString('default', { month: 'long' });
-	const dayNow = dateObject.getDate();
-	const timeNow = dateObject.toLocaleTimeString();
-
-	// Append suffix to day
-	if (dayNow > 3 && dayNow < 21) {
-		const date = `${monthNow} ${dayNow}th ${yearNow}`;
-		dateDisplay.innerHTML = `${date}, ${timeNow}`;
-	} else {
-		const d = dayNow % 10;
-		let date = '';
-		switch (d) {
-			case 1:
-				date = `${monthNow} ${dayNow}st ${yearNow}`;
-				dateDisplay.innerHTML = `${date}, ${timeNow}`;
-				break;
-			case 2:
-				date = `${monthNow} ${dayNow}nd ${yearNow}`;
-				dateDisplay.innerHTML = `${date}, ${timeNow}`;
-				break;
-			case 3:
-				date = `${monthNow} ${dayNow}rd ${yearNow}`;
-				dateDisplay.innerHTML = `${date}, ${timeNow}`;
-				break;
-			default:
-				date = `${monthNow} ${dayNow}th ${yearNow}`;
-				dateDisplay.innerHTML = `${date}, ${timeNow}`;
-				break;
-		}
-	}
-};
 
 setInterval(CurrentDateTime, 1000);
 
 const showAndRemoveSuccessMessage = (target) => {
-	const successMessage = document.createElement('p');
-	successMessage.classList.add('books__addbook-success');
-	successMessage.textContent = 'Book added successfully';
-	target.insertAdjacentElement('afterend', successMessage);
+  const successMessage = document.createElement('p');
+  successMessage.classList.add('books__addbook-success');
+  successMessage.textContent = 'Book added successfully';
+  target.insertAdjacentElement('afterend', successMessage);
 
-	setTimeout(() => {
-		successMessage.remove();
-	}, 3000);
+  setTimeout(() => {
+    successMessage.remove();
+  }, 3000);
 };
-
 
 // create a form page display function
 const displayForm = () => {
-	const booksContainer = document.querySelector('.books');
+  const booksContainer = document.querySelector('.books');
 
-	const addFormHtml = `
+  const addFormHtml = `
     <section class="books__addbook">
       <h2 class="books__addbook-title">Add a new book</h2>
 
@@ -76,15 +38,15 @@ const displayForm = () => {
     </section>
   `;
 
-	booksContainer.innerHTML = '';
-	booksContainer.insertAdjacentHTML('afterbegin', addFormHtml);
+  booksContainer.innerHTML = '';
+  booksContainer.insertAdjacentHTML('afterbegin', addFormHtml);
 };
 
 // create a contact page display function
 const displayContact = () => {
-	const booksContainer = document.querySelector('.books');
+  const booksContainer = document.querySelector('.books');
 
-	const contactHtml = `
+  const contactHtml = `
   <section class="books__contact">
     <h2 class="books__contact-title">Contact Information</h2>
     
@@ -99,95 +61,95 @@ const displayContact = () => {
   </section>
   `;
 
-	booksContainer.innerHTML = '';
-	booksContainer.insertAdjacentHTML('afterbegin', contactHtml);
+  booksContainer.innerHTML = '';
+  booksContainer.insertAdjacentHTML('afterbegin', contactHtml);
 };
 
 // create a books page display function
 const displayBooks = () => {
-	const booksContainer = document.querySelector('.books');
+  const booksContainer = document.querySelector('.books');
 
-	const booklistHtml = `
+  const booklistHtml = `
   <section class="books__collection">
     <h1 class="books__collection-title">All awesome books</h1>
     <div class="books__list"></div>
   </section>
   `;
 
-	booksContainer.innerHTML = '';
-	booksContainer.insertAdjacentHTML('afterbegin', booklistHtml);
+  booksContainer.innerHTML = '';
+  booksContainer.insertAdjacentHTML('afterbegin', booklistHtml);
 };
 
 // render  books on the page when page loads
 window.addEventListener('DOMContentLoaded', () => {
-	// create a new instance of the Books class
-	const books = new Books();
+  // create a new instance of the Books class
+  const books = new Books();
 
-	// call the renderBooks method from books class when the page loads
-	books.renderBooks();
+  // call the renderBooks method from books class when the page loads
+  books.renderBooks();
 });
 
 // add event listener to the page
 document.addEventListener('click', (e) => {
-	if (e.target.classList.contains('header__nav-item')) {
-		// Get DOM elements
-		const navItems = document.querySelectorAll('.header__nav-item');
+  if (e.target.classList.contains('header__nav-item')) {
+    // Get DOM elements
+    const navItems = document.querySelectorAll('.header__nav-item');
 
-		// remove the active class from all nav items
-		navItems.forEach((item) => {
-			item.classList.remove('active');
-		});
+    // remove the active class from all nav items
+    navItems.forEach((item) => {
+      item.classList.remove('active');
+    });
 
-		// add the active class to the clicked nav item
-		e.target.classList.add('active');
+    // add the active class to the clicked nav item
+    e.target.classList.add('active');
 
-		// check which nav item was clicked
-		if (e.target.dataset.nav === 'add') {
-			displayForm();
-		} else if (e.target.dataset.nav === 'contact') {
-			displayContact();
-		} else {
-			displayBooks();
+    // check which nav item was clicked
+    if (e.target.dataset.nav === 'add') {
+      displayForm();
+    } else if (e.target.dataset.nav === 'contact') {
+      displayContact();
+    } else {
+      displayBooks();
 
-			// create a new instance of the Books class
-			const books = new Books();
+      // create a new instance of the Books class
+      const books = new Books();
 
-			// call the renderBooks method from books class when the page loads
-			books.renderBooks();
-		}
-	} else if (e.target.dataset.input === 'submit') {
-		// Get DOM elements
-		const form = document.querySelector('.books__addbook-form');
+      // call the renderBooks method from books class when the page loads
+      books.renderBooks();
+    }
+  } else if (e.target.dataset.input === 'submit') {
+    // Get DOM elements
+    const form = document.querySelector('.books__addbook-form');
 
-		// check form validity
-		if (form.checkValidity()) {
-			// prevent the default behaviour
-			e.preventDefault();
+    // check form validity
+    if (form.checkValidity()) {
+      // prevent the default behaviour
+      e.preventDefault();
 
-			// get the values from the form
-			const formData = new FormData(form);
-			const title = formData.get('title');
-			const author = formData.get('author');
-			const id = Math.random().toString(36).substring(2, 9);
+      // get the values from the form
+      const formData = new FormData(form);
+      const title = formData.get('title');
+      const author = formData.get('author');
+      const id = Math.random().toString(36).substring(2, 9);
 
-			const newBook = { id, title, author };
+      const newBook = { id, title, author };
 
-			// create a new instance of the Books class
-			const books = new Books();
+      // create a new instance of the Books class
+      const books = new Books();
 
-			// call the addBook function
-			books.addBook(newBook);
+      // call the addBook function
+      books.addBook(newBook);
 
-			// clear form
-			form.reset();
-		}
-		// show success message
-		showAndRemoveSuccessMessage(form);
-	} else if (e.target.dataset.id) {
-		// create a new instance of the Books class
-		const books = new Books();
+      // clear form
+      form.reset();
+    }
+    // show success message
+    showAndRemoveSuccessMessage(form);
+  } else if (e.target.dataset.id) {
+    // create a new instance of the Books class
+    const books = new Books();
 
-		// call the removeBook function
-		books.removeBook(e.target.dataset.id);
-	}
+    // call the removeBook function
+    books.removeBook(e.target.dataset.id);
+  }
 });
