@@ -1,8 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 import { DateTime } from './luxon/luxon.js';
-
 // create a date-time function
-export const CurrentDateTime = () => {
+export default () => {
   const dateDisplay = document.querySelector('.header__date');
   const dateObject = DateTime.now();
   const yearNow = dateObject.toFormat('yyyy');

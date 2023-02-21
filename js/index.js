@@ -1,5 +1,5 @@
 import Books from './modules/books.js';
-import { CurrentDateTime } from './modules/datetime.js';
+import CurrentDateTime from './modules/datetime.js';
 // Get DOM elements
 
 setInterval(CurrentDateTime, 1000);
