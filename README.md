@@ -1,4 +1,3 @@
-![](https://img.shields.io/badge/fmanimashaun-green)
 ![](https://img.shields.io/badge/yosaddis-blue)
 
 # Awesome books: plain JavaScript with objects
@@ -18,7 +17,7 @@
   - [Install](#install)
   - [Run tests](#run-tests)
   - [Deployment](#deployment)
-- [👥 Authors](#authors)A
+- [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -28,22 +27,16 @@
 
 ## 📖 Overview <a name="about-project"></a>
 
-In this project, we built a basic website that allows users to add/remove books from a list. This was achieved by using JavaScript objects and arrays while using javascript DOM and basic events to dynamically modify the page.
+This project is a contiuation of <a href = "https://yosaddis.github.io/Awesome-books"> Awsome Books </a>. In this repo the project adopts Java Script ES6 standars. And uses modularises the functionalities of the projects.
 
 ### Project Objectives <a name="project-objectives"></a>
 
-- [x] Implement only a basic UI with plain HTML
-- [ ] Create a collection that keeps a list of books (hint: you can use an array of objects for that).
-- [x] Create a function to add a new book to the collection, with title and author.
-- [x] Create a function to remove a book from the collection (hint: you can use the array filter() method).
-- [x] Display all books saved in the collection at the top part of the page.
-- [x] Make sure that when a user clicks the "Add" button:
-  - [ ] A new book is added to the collection.
-  - [x] The new book is displayed on the page.
-- [ ] Make sure that when a user clicks the "Remove" button:
-  - [x] The correct book is removed from the collection.
-  - [x] The correct book disappears from the page.
-- [ ] Make sure that data is preserved in the browser's memory by using localStorage.
+- [x] Clone the functionalities of the previous project
+- [x] Create a modular structure. 
+- [x] Create Books module and import it to index.js
+- [x] Create datetime module and import it to index.js
+- [x] Install luxon to the project and use it in datetime module.
+- [x] Create .eslintignore to ignore luxon files during linter check.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -56,10 +49,11 @@ In this project, we built a basic website that allows users to add/remove books 
 ### Key Features <a name="key-features"></a>
 
 - [x] Preserving data with localStorage
+- [x] Use ES6 Standard
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> [Live Demo Link](https://yosaddis.github.io/Awesome-books/)
+> [Live Demo Link](https://yosaddis.github.io/Awesome-books-ES6/)
 
 ### Screenshots <a name="screenshots"></a>
 
@@ -84,7 +78,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup <a name="setup"></a>
 
-- Open your GitHub account the repository's [link](https://github.com/yosaddis/Awesome-books)
+- Open your GitHub account the repository's [link](https://github.com/yosaddis/Awesome-books-ES6)
 
 ### Prerequisites <a name="prerequisites"></a>
 
@@ -93,7 +87,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install <a name="install"></a>
 
-- copy the repo's link and clone it by writing `git clone https://github.com/yosaddis/Awesome-books.git` on your git bash terminal.
+- copy the repo's link and clone it by writing `git clone https://github.com/yosaddis/Awesome-books-ES6.git` on your git bash terminal.
 - `npm install` to install the dependencies
 
 ### Run tests <a name="run-tests"></a>
@@ -110,15 +104,6 @@ To get a local copy up and running follow these simple example steps.
 
 - [GitHub](https://github.com/yosaddis)
 - [LinkedIn](https://www.linkedin.com/in/yoseph-addisu-79a58b60)
-
-
-👤 **Engr. Animashaun Fisayo**
-
-- [GitHub](https://github.com/fmanimashaun)
-- [Twitter](https://twitter.com/fmanimashaun)
-- [LinkedIn](https://www.linkedin.com/in/fmanimashaun/)
-- [Website](https://fmanimashaun.com)
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
