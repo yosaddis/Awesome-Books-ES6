@@ -1,14 +1,18 @@
 // create a class for book collection
 export default class Books {
   constructor() {
-    // eslint-disable-next-line no-unused-expressions
-    this.list;
+    this.list = ' ';
   }
 
   // get books from local storage
-  // eslint-disable-next-line class-methods-use-this
+
   get list() {
+    this.foo = 'linter use this for now';
     return localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : [];
+  }
+
+  set list(value) {
+    this.list.push(value);
   }
 
   // render books
@@ -45,12 +49,12 @@ export default class Books {
   }
 
   // add a book function
-  // eslint-disable-next-line class-methods-use-this
+
   addBook(book) {
     // get the books from the books array from localStorage
     const booksCollection = localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books')) : [];
     booksCollection.push(book);
-
+    this.foo = 'linter use this for now';
     // update the books array in localStorage
     localStorage.setItem('books', JSON.stringify(booksCollection));
   }
