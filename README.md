@@ -53,7 +53,7 @@ This project is a contiuation of <a href = "https://yosaddis.github.io/Awesome-b
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> [Live Demo Link](https://yosaddis.github.io/Awesome-books-ES6/)
+> [Live Demo Link](https://yosaddis.github.io/Awesome-Books-ES6/)
 
 ### Screenshots <a name="screenshots"></a>
 
